@@ -51,3 +51,8 @@ Executar testes é uma arte.
 
 Value objects - são tipos que compõe uma entidade
 Entity tem um ID e value objects não pois não são persistidos no banco. São auxiliares
+
+
+VALIDACOES
+
+Exceções tem um custo muito alto no processador.
