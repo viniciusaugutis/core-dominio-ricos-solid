@@ -56,3 +56,8 @@ Entity tem um ID e value objects não pois não são persistidos no banco. São 
 VALIDACOES
 
 Exceções tem um custo muito alto no processador.
+
+Single point of fail (único ponto de falha) é muito bom seguir isso.
+
+Design by contracts - 
+
