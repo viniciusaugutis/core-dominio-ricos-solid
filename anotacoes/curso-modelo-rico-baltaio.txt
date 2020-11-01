@@ -59,5 +59,13 @@ Exceções tem um custo muito alto no processador.
 
 Single point of fail (único ponto de falha) é muito bom seguir isso.
 
-Design by contracts - 
+Design by contracts 
+
+Testes automatizados
+
+Metodologia Red, Green, Refactory - 
+
+Escrever casos de teste e fazer eles falharem
+Fazer eles passarem
+Refatorar o codigo
 
