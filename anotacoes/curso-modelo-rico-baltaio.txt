@@ -1,0 +1,43 @@
+Linguagem Ubliqua: Todos na mesma linguagem. Falar a linguagem do cliente.
+
+Dominios Ricos: dominios bem mais completos. Metodos no dominio e regras de negocio na aplicaão.
+Dominios Anemicos: dominios não tem especificidade. Nele você só tem as propriedades no model
+e quando preciso tem store procedure, functions etc.
+Data driven design: design orientado a dados
+
+Só não pode tomar decisão dentro de store procedure. Que isso fica difícil de testar.
+
+Banco de dados: é apenas um repositório de informações.
+
+Subdomínios: segmentação dos dominios em outras partes. (pode ser microsservicos).
+
+Bath size: é o tamanho da mudança, quanto ele afeta.
+
+dotnet new classlib - projeto que no final compilado gera uma DLL. (Domain é um exemplo).
+
+dotnet new mstest - projeto de teste no dotnet
+
+dot sln add PaymentContext.Domain - add projeto na solution
+
+dotnet restore - restaurar libs
+
+Shared - itens que posso compartilhar com outros contextos.
+Domain - Dominio da solução
+Tests - projeto de testes
+
+domain: dotnet add reference ../PaymentContent.Shared
+dominio referencia shared
+testes referecia os dois
+
+Abstract: não posso instanciar ele direto. Tenho que instanciar um filho
+
+SOLID E CLEAN CODE
+
+Sempre é necessário dar expressividade ao seu modelo. (CLEAN CODE)
+
+SOLID - 
+
+Single responsability (cada item deve fazer apenas uma coisa) - Ter várias classes dentro de um mesmo arquivo você está ferindo esse princípio
+
+Open close principle: nossa classe ta aberta para extensões e fechada para modificações (ninguem de fora da classe consegue fazer algo).
+IReadOnlyCollection - é uma boa para esses casos. Ao inves de list e criar um metodo para adicionar algo na classe

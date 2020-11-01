@@ -1,0 +1,81 @@
+dotnew new web - criar aplicação web vazia sem template
+dot new sln - criar a solution para o visual studio
+dotnet sln add ProductCatalog.sln
+dotnet ef migrations add initial
+dotnet ef database update
+dotnet add package Microsoft.EntityFrameworkCore.Relational
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+Self host - a própria aplicação é o servidor web
+
+MVC - Model view controller
+
+dotnet add package Microsoft.AspnetCore.Mvc
+
+Injecoes de dependencia
+Transient - vai criar varios itens por requisicao
+Scoped - vai criar um item por requisicao - toda vez que pedir a classe vai ver se ja existe um na memoria, se não existir cria um novo se não reaproveita o mesmo. (o TRANSIENT é o contrario disso, sempre vai criar)
+
+Repository Patterns
+
+Abstrai o acesso aos dados. Cada entitdade/modelo tem seu repositorio
+Permite trocar fonte de dados sem afetar o resto do sistema
+
+utilizar sempre o AsNoTracking()
+
+Compressao de requisicao ZzIP
+dotnet add package Microsoft.AspNetCore.ResponseCompression
+
+Swagger
+dotnet add package Swashbuckle.AspNetCore
+
+
+DDD
+
+Todo.Domain.API
+Todo.Domain
+Todo.Domain.Infra
+Todo.Domain.Tests
+
+
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=12345678' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+
+docker run --memory 2048m --cpus 2 -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Admin1234#" -p 1433:1433 -d mcr.microsoft.com/mssql/server
+
+docker-compose --compatibility up -d
+
+
+
+CURSO API CORE 3 E EF 3
+
+dotnet new webapi -o Shop
+
+Por a API do core ser Self-host isso possibilitou ela executar em varios S.O, pois ela própria gerencia as requisições e servidores,
+não sendo dependente do iis ou outro servidor.
+
+services.AddControllers(); facilitou muito do aspnet core 2 para o aspnet core 3. Antes precisava do useMvc etc
+
+Data Annotations no model é um pouco melhor que criar os arquivos .map
+
+ControllerBase - é o controller utilizado no aspnet core. Controller era usado no asp.net mvc
+
+Tasks - para trabalhar de forma asyncrona
+ActionResult - Resultado no formato que a tela espera
+
+Injeção de dependencia
+Singleton : cria uma unica para aplicação toda (compartilha cm todos usuarios) 
+Scoped: cria uma unica por requisicao e reaproveita a que ja está na memoria. Fecha sozinho no final.
+Transient: cria um por cada requisicao e chamada. Não pega da memoria.
+
+Sempre faça order by, where, take, etc. Antes do TOLIST(). Se não ele vai jogar a lista toda em memoria e depois fazer os filtros
+AsNoTracking() é muito util
+
+Pra funcionar o Add-Migration e Update-Database tem que instalar Install-Package EntityFramework.Commands 
+
+dotnet watch run - executar ja restartando quando ela tiver mudanças
+
+AUTENTICACAO E AUTORIZACAO NO DOTNET CORE
+
+Microsoft.AspNetCore.Authentication
+Microsoft.AspNetCore.Authentication.JwtBearer
+
