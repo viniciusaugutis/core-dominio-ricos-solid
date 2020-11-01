@@ -41,3 +41,13 @@ Single responsability (cada item deve fazer apenas uma coisa) - Ter várias clas
 
 Open close principle: nossa classe ta aberta para extensões e fechada para modificações (ninguem de fora da classe consegue fazer algo).
 IReadOnlyCollection - é uma boa para esses casos. Ao inves de list e criar um metodo para adicionar algo na classe
+
+Clean code - robert c. martin (essencial - uncle bob)
+Clean architeture - robert c. martin
+
+Primitive obssessions - obssessão por tipos primitivos. 
+Código vai ficando mais rico a medida que você vai saindo dos tipos primitivos e vai passando para tipos mais complexos e reutilizados.
+Executar testes é uma arte.
+
+Value objects - são tipos que compõe uma entidade
+Entity tem um ID e value objects não pois não são persistidos no banco. São auxiliares

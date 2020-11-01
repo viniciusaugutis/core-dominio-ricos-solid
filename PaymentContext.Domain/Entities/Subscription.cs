@@ -1,11 +1,12 @@
-﻿using System;
+﻿using PaymentContext.Shared.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace PaymentContext.Domain.Entities
 {
-    public class Subscription
+    public class Subscription : Entity
     {
         private IList<Payment> _payments;
         public Subscription(DateTime? expireDate)
@@ -14,7 +15,7 @@ namespace PaymentContext.Domain.Entities
             LastUpdateDate = DateTime.Now;
             ExpireDate = expireDate;
             Active = true;
-            Payments = new List<Payment>();
+            _payments = new List<Payment>();
         }
 
         public DateTime CreateDate { get; private set; }

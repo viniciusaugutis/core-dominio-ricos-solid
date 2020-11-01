@@ -1,12 +1,14 @@
-﻿using System;
+﻿using PaymentContext.Domain.ValueObjects;
+using PaymentContext.Shared.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PaymentContext.Domain.Entities
 {
-    public abstract class Payment
+    public abstract class Payment: Entity
     {
-        protected Payment(DateTime paidDate, DateTime expireDate, decimal total, decimal totalPaid, string address, string document, string payer, string email)
+        protected Payment(DateTime paidDate, DateTime expireDate, decimal total, decimal totalPaid, Address address, Document document, string payer, Email email)
         {
             PaidDate = paidDate;
             ExpireDate = expireDate;
@@ -25,12 +27,12 @@ namespace PaymentContext.Domain.Entities
         public decimal TotalPaid { get; private set; }
 
         public string Number { get; private set; }
-        public string Address { get; private set; }
+        public Address Address { get; private set; }
 
-        public string Document { get; private set; }
+        public Document Document { get; private set; }
 
         public string Payer { get; private set; }
-        public string Email { get; private set; }
+        public Email Email { get; private set; }
     }
 
 }
