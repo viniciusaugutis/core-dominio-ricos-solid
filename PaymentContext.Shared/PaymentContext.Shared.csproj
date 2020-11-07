@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Handlers\IHandler.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Handlers\IHandler.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Flunt" Version="1.0.5" />
   </ItemGroup>
 
